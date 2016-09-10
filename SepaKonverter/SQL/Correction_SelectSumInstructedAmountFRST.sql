@@ -1,0 +1,1 @@
+select SUM(InstructedAmount) from Lastschriften where SequenceType = 'FRST'

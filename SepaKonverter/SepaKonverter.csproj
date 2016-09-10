@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C87BB524-310E-4BBD-B8E4-9FDD1BA82FCB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SepaKonverter</RootNamespace>
+    <AssemblyName>SepaKonverter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEV</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="DatabaseConnector.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debtor.cs" />
+    <Compile Include="PaymentInformation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrganisationBO.cs" />
+    <Compile Include="OrganisationDAO.cs" />
+    <Compile Include="SepaDirectDebitGroupHeader.cs" />
+    <Compile Include="SepaDirectDebitPaymentInitiationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SepaDirectDebitPaymentInitiationPanel.Designer.cs">
+      <DependentUpon>SepaDirectDebitPaymentInitiationPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SepaDirectDebitRawDataBO.cs" />
+    <Compile Include="SepaDirectDebitRawDataDAO.cs" />
+    <Compile Include="SepaDirectDebitRawDataVO.cs" />
+    <Compile Include="SepaDocument.cs" />
+    <Compile Include="SepaDocumentFiller.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SepaDTARawDataBO.cs" />
+    <Compile Include="SepaDTARawDataDAO.cs" />
+    <Compile Include="SepaDTARawDataVO.cs" />
+    <Compile Include="SepaLib\SepaAccount.cs" />
+    <Compile Include="SepaLib\SepaAmount.cs" />
+    <Compile Include="SepaLib\SepaBalance.cs" />
+    <Compile Include="SepaLib\SepaBalances.cs" />
+    <Compile Include="SepaLib\SepaBankToCustomerAccountReport.cs" />
+    <Compile Include="SepaLib\SepaBankToCustomerDebitCreditNotification.cs" />
+    <Compile Include="SepaLib\SepaBankToCustomerMessage.cs" />
+    <Compile Include="SepaLib\SepaBankToCustomerStatement.cs" />
+    <Compile Include="SepaLib\SepaBIC.cs" />
+    <Compile Include="SepaLib\SepaCollection.cs" />
+    <Compile Include="SepaLib\SepaCreditDebitIndicator.cs" />
+    <Compile Include="SepaLib\SepaCreditorID.cs" />
+    <Compile Include="SepaLib\SepaCreditTransferPaymentInformation.cs" />
+    <Compile Include="SepaLib\SepaCreditTransferPaymentInitiation.cs" />
+    <Compile Include="SepaLib\SepaCreditTransferTransactionInformation.cs" />
+    <Compile Include="SepaLib\SepaDirectDebitPaymentInformation.cs" />
+    <Compile Include="SepaLib\SepaDirectDebitPaymentInitiation.cs" />
+    <Compile Include="SepaLib\SepaDirectDebitTransactionInformation.cs" />
+    <Compile Include="SepaLib\SepaDocument.cs" />
+    <Compile Include="SepaLib\SepaFinancialInstitutionIdentification.cs" />
+    <Compile Include="SepaLib\SepaGermanBundesbankInfo.cs" />
+    <Compile Include="SepaLib\SepaGermanIBAN.cs" />
+    <Compile Include="SepaLib\SepaGermanIBANResult.cs" />
+    <Compile Include="SepaLib\SepaGermanPseudoAcctInfo.cs" />
+    <Compile Include="SepaLib\SepaIBAN.cs" />
+    <Compile Include="SepaLib\SepaMessage.cs" />
+    <Compile Include="SepaLib\SepaMessageInfo.cs" />
+    <Compile Include="SepaLib\SepaMessageType.cs" />
+    <Compile Include="SepaLib\SepaNamespace.cs" />
+    <Compile Include="SepaLib\SepaObject.cs" />
+    <Compile Include="SepaLib\SepaOriginalPaymentInformation.cs" />
+    <Compile Include="SepaLib\SepaOriginalPaymentInformations.cs" />
+    <Compile Include="SepaLib\SepaOriginalTransactionInformation.cs" />
+    <Compile Include="SepaLib\SepaOriginalTransactionInformations.cs" />
+    <Compile Include="SepaLib\SepaPartyIdentification.cs" />
+    <Compile Include="SepaLib\SepaPaymentInformation.cs" />
+    <Compile Include="SepaLib\SepaPaymentInformations.cs" />
+    <Compile Include="SepaLib\SepaPaymentInitiation.cs" />
+    <Compile Include="SepaLib\SepaPaymentStatusReport.cs" />
+    <Compile Include="SepaLib\SepaStatement.cs" />
+    <Compile Include="SepaLib\SepaStatementEntries.cs" />
+    <Compile Include="SepaLib\SepaStatementEntry.cs" />
+    <Compile Include="SepaLib\SepaStatusReasonInformation.cs" />
+    <Compile Include="SepaLib\SepaStatusReasonInformations.cs" />
+    <Compile Include="SepaLib\SepaTransactionDetails.cs" />
+    <Compile Include="SepaLib\SepaTransactionDetailsCollection.cs" />
+    <Compile Include="SepaLib\SepaTransactionInformation.cs" />
+    <Compile Include="SepaLib\SepaTransactionInformations.cs" />
+    <Compile Include="SepaLib\SepaTriState.cs" />
+    <Compile Include="SepaLib\SepaUtil.cs" />
+    <Compile Include="SepaLib\SepaWellKnownMessageInfos.cs" />
+    <Compile Include="SepaPaymentInformationBO.cs" />
+    <Compile Include="SepaPaymentInformationDAO.cs" />
+    <Compile Include="SepaPaymentInformationVO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SepaPaymentInitiationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrganisationVO.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SepaDirectDebitPaymentInitiationPanel.resx">
+      <DependentUpon>SepaDirectDebitPaymentInitiationPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SepaPaymentInitiationControl.resx">
+      <DependentUpon>SepaPaymentInitiationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ICON_SEPA.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

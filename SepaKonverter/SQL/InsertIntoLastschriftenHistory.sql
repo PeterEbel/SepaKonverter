@@ -1,0 +1,1 @@
+insert into LastschriftenHistory select * from Lastschriften where DatumAbrechnung = '2014-10-25'

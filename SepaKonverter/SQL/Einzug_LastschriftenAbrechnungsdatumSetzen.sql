@@ -1,0 +1,1 @@
+update Lastschriften set DatumAbrechnung = DatumImport

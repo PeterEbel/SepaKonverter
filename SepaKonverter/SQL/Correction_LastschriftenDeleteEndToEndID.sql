@@ -1,0 +1,1 @@
+delete from Lastschriften where EndToEndID = '1000100634'

@@ -1,0 +1,1 @@
+insert into LastschriftenHistory select * from Lastschriften
